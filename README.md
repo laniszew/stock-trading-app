@@ -1,3 +1,13 @@
+## Author Info
+
+Structure is Feature Based <br />
+Shared components would go into src/shared/components directory <br />
+Null handling in service layer might be not neccesary, but I don't know those public APIs, so added it <br />
+LocalStorage is used for simplicity <br />
+.env file included in repo with API key <br />
+For production/dev envs there would be appropriate .env files, not included in repo <br />
+Ant design was used <br />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
