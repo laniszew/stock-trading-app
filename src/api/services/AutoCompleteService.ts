@@ -21,7 +21,7 @@ interface IAutoCompleteService {
 // Prefer keeping API layer as classes while everything else is written as functions, just personal thing
 export class AutoCompleteService implements IAutoCompleteService {
     API_CONSTS = {
-        URL: 'https://autocomplete.clearbit.com/v1/companies/suggest',
+        URL: 'https://autocomplete.clearbit.com/v1/companies',
         END_POINTS: {
             SUGGEST: 'suggest'
         }

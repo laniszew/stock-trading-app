@@ -4,6 +4,7 @@ import isNil from 'lodash/isNil';
 import AlphaVantageService, { NewestValues } from '../../api/services/AlphaVantageService';
 import CONSTANTS from '../../global/constants/constants';
 import AutoCompleteService, { AutoCompleteResponse }from '../../api/services/AutoCompleteService';
+import CompanyItem from './CompanyItem/CompanyItem';
 
 type CompanyData = AutoCompleteResponse & NewestValues
 
@@ -34,6 +35,7 @@ const CompaniesView: FC = () => {
 
     return (
         <div>
+              <h2>Companies</h2>
             {
                 !companiesData || companiesData.length === 0 ? (
                     <div>
@@ -43,8 +45,17 @@ const CompaniesView: FC = () => {
                 ) : (
                     <div>
                         {companiesData.map(company => (
-                            <div>
-
+                            <div key={company["01. symbol"]}>
+                                <CompanyItem
+                                    symbol={company["01. symbol"]}
+                                    name={company.name}
+                                    domain={company.domain}
+                                    logo={company.logo}
+                                    price={company["05. price"]}
+                                    change={company["09. change"]}
+                                    changePercent={company["10. change percent"]}
+                                    latestDay={company["07. latest trading day"]}
+                                />
                             </div>
                         ))}
                     </div>
